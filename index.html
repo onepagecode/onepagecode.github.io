@@ -28,6 +28,62 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create a column layout with Flexbox */
+        .row {
+            display: flex;
+        }
+
+        /* Left column (menu) */
+        .left {
+            flex: 35%;
+            padding: 15px 0;
+        }
+
+        .left h2 {
+            padding-left: 8px;
+        }
+
+        /* Right column (page content) */
+        .right {
+            flex: 65%;
+            padding: 15px;
+        }
+
+        /* Style the search box */
+        #mySearch {
+            width: 100%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+
+        /* Style the navigation menu inside the left column */
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myMenu li a {
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+            display: block
+        }
+
+        #myMenu li a:hover {
+            background-color: #eee;
+        }
+    </style>
 
 </head>
 
@@ -86,31 +142,32 @@
         </div>
     </header>
 
-    <script async src="https://cse.google.com/cse.js?cx=2f5db59e1aefd20ff"></script>
-    <div class="gcse-search"></div>
+
 
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            <a href="http://onepagecode.me">
-                            this is a shit show
-                            </a>
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                        <div class="left" style="background-color:#bbb;">
+                            <h2>Menu</h2>
+
+                            <script async src="https://cse.google.com/cse.js?cx=2f5db59e1aefd20ff"></script>
+                            <div class="gcse-search"></div>
+
+                            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+                            <ul id="myMenu">
+                                <li><a href="#">search question</a></li>
+                                <li><a href="#">jnsjkns.kfksdfsdsdf</a></li>
+                                <li><a href="#">Jsfgdfgfg</a></li>
+                                <li><a href="#">Pfgdfgfg</a></li>
+                                <li><a href="#">Pydgdfgfgfsgthon</a></li>
+                                <li><a href="#">rfwewewefsfs</a></li>
+                                <li><a href="#">SQfsdfsdfsL</a></li>
+                                <li><a href="#">Bootsdfsdfsdfstrap</a></li>
+                                <li><a href="#">Nodsdfsdfe.js</a></li>
+                            </ul>
+                        </div>
                 </div>
                 <hr>
                 <div class="post-preview">
@@ -199,6 +256,24 @@
         </div>
     </footer>
 
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -211,6 +286,7 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+
 
 </body>
 
